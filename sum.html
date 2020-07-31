@@ -1,0 +1,62 @@
+<html>
+<head>
+<SCRIPT language="JavaScript">
+var total = 0;
+function sum() {       
+	document.f1.rez.value = Number(document.f1.op1.value) + Number(document.f1.op2.value);
+}
+function inputnum(arg) {
+	document.f1.result.value += arg;
+}
+function plus() { 
+	total += Number(document.f1.result.value);
+	document.f1.result.value = "";
+}
+function getresult() {
+	total += Number(document.f1.result.value);
+	document.f1.result.value = total;
+}
+function clearq() {
+	total = 0;
+	document.f1.result.value = "";
+}
+</SCRIPT>
+</head>
+<body>
+
+<center><h1>—ÛÏÏ‡</h1>
+
+<form name="f1">
+	<input name="result" size="50" type="text" value="">
+</form>
+
+<table>
+  <tr>
+    <td><input onclick="inputnum(this.value)" type="button" value="1"></td>
+    <td style="background-color: white"><input onclick="inputnum(this.value)" type="button" value="2"></td>
+    <td><input onclick="inputnum(this.value)" type="button" value="3"></input></td>
+  </tr>
+  <tr>
+    <td style="background-color: white"><input onclick="inputnum(this.value)" type="button" value="4"></input></td>
+    <td><input onclick="inputnum(this.value)" type="button" id="myButton5" value="5"></input></td>
+    <td style="background-color: white"><input onclick="inputnum(this.value)" type="button" value="6"></input></td>
+  </tr>
+  <tr>
+    <td><input onclick="inputnum(this.value)" type="button" value="7"></input></td>
+    <td style="background-color: white"><input onclick="inputnum(this.value)" type="button" value="8"></input></td>
+    <td><input onclick="inputnum(this.value)" type="button" value="9"></input></td>
+  </tr>
+  <tr>
+	<td><input type="button" value="+" onClick="plus()"></input></td>
+	<td><input type="button" onclick="inputnum(this.value)" value="0"></input></td>
+	<td><input type="button" value="=" onclick="getresult(this.value)"></input></td>
+  </tr>
+<tr>
+<td><input type="button" value="c" onClick="clearq()"></td>
+</tr>
+</table>
+
+</center>
+
+</body>
+</html>
